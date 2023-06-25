@@ -1,0 +1,32 @@
+bluekittymeow@blueberrypi:~ $ python3
+Python 3.9.2 (default, Mar 12 2021, 04:06:34) 
+[GCC 10.2.1 20210110] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import RPi.GPIO as GPIO
+>>> import time
+>>> GPIO.setmode(GPIO.BCM)
+>>> GPIO.setup(17, GPIO.OUT)
+>>> GPIO.setup(27, GPIO.OUT)
+>>> GPIO.setup(22, GPIO.OUT)
+>>> GPIO.output(17, GPIO.LOW)
+>>> GPIO.output(17, GPIO.HIGH)
+>>> GPIO.output(17, GPIO.LOW)
+>>> GPIO.output(27, GPIO.HIGH)
+>>> GPIO.output(27, GPIO.LOW)
+>>> GPIO.output(22, GPIO.HIGH)
+>>> GPIO.output(22, GPIO.LOW)
+>>> buzzer_pin = 18
+>>> GPIO.setup(buzzer_pin, GPIO.OUT)
+>>> pwm = GPIO.PWM(buzzer_pin, 261.6)
+>>> pwm.start(50)
+>>> pwm.stop()
+>>> pwm.start(50)
+>>> 
+>>> pwm.stop()
+>>> pwm.start(20)
+>>> pwm.stop()
+>>> pwm.start(70)
+>>> pwm.stop()
+>>> pwm.start(90)
+>>> pwm.stop()
+>>> 
